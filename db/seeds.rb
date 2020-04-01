@@ -2,6 +2,8 @@ User.destroy_all
 Mural.destroy_all
 Favorite.destroy_all
 
+# this is a test comment
+
 # -------------Users-------------
 user_one = User.create(first_name: "Ricky", last_name: "Jones")
 user_two = User.create(first_name: "Lady", last_name: "Time")
