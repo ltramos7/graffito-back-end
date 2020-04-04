@@ -6,19 +6,19 @@ Favorite.destroy_all
 # this is another test comment
 
 # -------------Users-------------
-user_one = User.create(first_name: "Ricky", last_name: "Jones")
-user_two = User.create(first_name: "Lady", last_name: "Time")
-user_three = User.create(first_name: "Bob", last_name: "Ross")
-user_four = User.create(first_name: "George", last_name: "Glass")
+user_one = User.create(first_name: "Ricky", last_name: "Jones", user_name: "rjones", password: "rjones1")
+user_two = User.create(first_name: "Lady", last_name: "Time", user_name: "ltime", password: "ltime1")
+user_three = User.create(first_name: "Bob", last_name: "Ross", user_name: "bross", password: "bross1")
+user_four = User.create(first_name: "George", last_name: "Glass", user_name: "gglass", password: "gglass1")
 
 # -------------Murals-------------
-mural_one = Mural.create(artist_id: User.all.sample.id, mural_title: "Mural Title One", year_installed: 1983, description: "This is a short description", artists: "Liza, BearChamp")
+mural_one = Mural.create(mural_title: "Mural Title One", year_installed: 1983, description: "This is a short description", artists: "Liza, BearChamp")
 
-mural_two = Mural.create(artist_id: User.all.sample.id, mural_title: "Mural Title Two", year_installed: 2000, description: "This will be a medium descrption, so just a little longer than a short one.", artists: "NoArray")
+mural_two = Mural.create(mural_title: "Mural Title Two", year_installed: 2000, description: "This will be a medium descrption, so just a little longer than a short one.", artists: "NoArray")
 
-mural_three = Mural.create(artist_id: User.all.sample.id, mural_title: "Mural Title Three", year_installed: 2020, description: "This description will be longer, to make a difference for the eyeballs. Let's just make this a little bit longer. This looks good.", artists: "Kozmo, Phillipe")
+mural_three = Mural.create(mural_title: "Mural Title Three", year_installed: 2020, description: "This description will be longer, to make a difference for the eyeballs. Let's just make this a little bit longer. This looks good.", artists: "Kozmo, Phillipe")
 
-mural_four = Mural.create(artist_id: User.all.sample.id, mural_title: "Mural Title Four", year_installed: 1929, description: "Cool", artists: "Bob Ross")
+mural_four = Mural.create(mural_title: "Mural Title Four", year_installed: 1929, description: "Cool", artists: "Bob Ross")
 
 
 
