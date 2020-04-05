@@ -11,19 +11,7 @@ class UsersController < ApplicationController
         render json: user
     end
 
-    # def create
-    #     user = User.find_by(user_name: params[:user_name])
-
-    #     if user && user.authenticate(params[:password])
-    #         render json: { id: user.id, user_name: user.user_name}
-    #     else
-    #         render json: { error: "Invalid Credentials", status: 401}
-    #     end
-
-    # end
-    # the above is Raza's solution
-
-    
+        
     def create
     
         user = User.create(first_name: params[:first_name], last_name: params[:last_name], user_name: params[:user_name], password: params[:password])
@@ -33,27 +21,9 @@ class UsersController < ApplicationController
         else
           render json: { error: 'failed to create user' }, status: :not_acceptable
         end
-      end
-     
+    end
 
-
-    # def create
-    #     user = User.create(first_name: param[:first_name], 
-    #                        last_name: params[:last_name],
-    #                        user_name: params[:user_name],
-    #                        password_digest: params[:password]
-    #                        )
-    #     if user.valid?
-    #         render json: {id:user.id, 
-    #                      first_name: user.first_name,
-    #                      last_name: user.last_name,
-    #                      user_name: user.user_name
-    #                      }
-    #     else
-    #         render json: { error: 'failed to create user' }
-    #     end
-    # end
-
+   
     
     
 
