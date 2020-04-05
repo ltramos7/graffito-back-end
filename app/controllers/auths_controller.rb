@@ -18,6 +18,7 @@ class AuthsController < ApplicationController
     end
 
     def show 
+
         token = request.headers[:Authorization].split(' ')[1]
         puts token 
         puts '============================'
@@ -33,7 +34,7 @@ class AuthsController < ApplicationController
         else
             render json: {error: 'Invalid Token'}, status: 401
         end
+        
     end
-    
 
 end
