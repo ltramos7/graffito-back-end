@@ -6,6 +6,8 @@ class MuralsController < ApplicationController
     end
 
     def show
+        mural = Mural.find(params[:id])
+        render json: mural
     end
 
     def new
