@@ -9,8 +9,8 @@ class AuthsController < ApplicationController
 
 
         if user && user.authenticate(params[:password])
-            # render json: { id: user.id, user_name: user.user_name, token: token}
-            render json: { user: user, token: token}
+            render json: { id: user.id, user_name: user.user_name, token: token}
+
             else 
                 render json: {error: 'Invalid Credtials'}, status: 401
         end
@@ -29,8 +29,7 @@ class AuthsController < ApplicationController
         user = User.find(user_id)
 
         if user 
-            # render json: { id: user.id, user_name: user.user_name, token: token}
-            render json: { user: user, token: token}
+            render json: { id: user.id, user_name: user.user_name, token: token}
         else
             render json: {error: 'Invalid Token'}, status: 401
         end
