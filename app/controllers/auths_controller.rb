@@ -19,8 +19,7 @@ class AuthsController < ApplicationController
 
     def show 
         token = request.headers[:Authorization].split(' ')[1]
-        puts token 
-        puts '============================'
+     
         decoded_token = JWT.decode(token, 'secret', true, { algorithm: 'HS256'})
 
         user_id = decoded_token[0]['user_id']
@@ -29,7 +28,9 @@ class AuthsController < ApplicationController
         user = User.find(user_id)
 
         if user 
-            render json: { id: user.id, user_name: user.user_name, token: token}
+            # render json: { id: user.id, user_name: user.user_name, token: token}
+            render json: { id: user.id, first_name: user.first_name, last_name: user.last_name, user_name: user.user_name, password: user.password, token: token }
+
         else
             render json: {error: 'Invalid Token'}, status: 401
         end
