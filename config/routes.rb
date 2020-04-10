@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   post '/signup', to: 'users#create', as: '/signup'
   post '/login', to: 'auths#create', as: '/login'
+  get '/current_user', to: 'auths#show'
   get '/profile', to: 'users#profile'
+  post '/favorites', to: 'favorite#create'
   
 
 end
