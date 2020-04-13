@@ -10,11 +10,10 @@ class FavoritesController < ApplicationController
     end
 
     def create 
-        favorite = Favorite.create(user_id: params[:user_id], mural_id: params[:mural_id])
+        puts params
+        puts '======================'
+        favorite = Favorite.create(user_id: params[:user]["id"], mural_id: params[:mural]["id"])
         render json: favorite
     end
-
-
-    # will eventuall need a create so i can create a favotire
 
 end
