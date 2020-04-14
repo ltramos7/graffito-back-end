@@ -5,7 +5,7 @@ class FavoritesController < ApplicationController
     end
 
     def show
-        favorite = Favorite.find(params[:id])
+        favorite = Favorite.find(params["id"])
         render json: favorite
     end
 
