@@ -28,10 +28,25 @@ class UsersController < ApplicationController
         end
     end
 
-   
+    def update
+      puts "-------------------------------------"
+      user= User.find(params[:id])
+      if user.update(user_params)
+        render json: user
+      else
+        render json: {error: "Failed"}
+      end
+    end
+
     
-    
+ 
 
 end
 
+private
+  def user_params
+      params.require(:user).permit(:first_name, :last_name, :user_name)
+      # , favorite_murals: [:id, :artist_id, :mural_title, :year_installed, :description, :artists, :created_at, :updated_at]
+      
+  end
 

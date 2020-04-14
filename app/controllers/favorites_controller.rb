@@ -16,4 +16,8 @@ class FavoritesController < ApplicationController
         render json: favorite
     end
 
+    def destroy
+        Favorite.destroy(params[:id])
+    end
+
 end
