@@ -10,7 +10,12 @@ class MuralsController < ApplicationController
         render json: mural
     end
 
-    def new
+    def create
+
+        mural =  Mural.create(mural_title: params[:mural_title], year_installed: params[:year_installed], description: params[:description], artists: params[:artists])
+
+        render json: mural
+        
     end
 
 end
