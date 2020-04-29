@@ -5,16 +5,19 @@ class FavoritesController < ApplicationController
     end
 
     def show
-        favorite = Favorite.find(params[:id])
+        favorite = Favorite.find(params["id"])
         render json: favorite
     end
 
     def create 
-        favorite = Favorite.create(user_id: params[:user_id], mural_id: params[:mural_id])
+        puts params
+        puts '======================'
+        favorite = Favorite.create(user_id: params[:user]["id"], mural_id: params[:mural]["id"])
         render json: favorite
     end
 
-
-    # will eventuall need a create so i can create a favotire
+    def destroy
+        Favorite.destroy(params[:id])
+    end
 
 end
